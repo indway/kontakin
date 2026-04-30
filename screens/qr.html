@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<title>Scan Contact QR</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-primary-fixed-variant": "#3f465c",
+                    "on-surface": "#0b1c30",
+                    "inverse-on-surface": "#eaf1ff",
+                    "secondary-fixed-dim": "#b4c5ff",
+                    "background": "#f8f9ff",
+                    "surface-container-lowest": "#ffffff",
+                    "surface": "#f8f9ff",
+                    "surface-variant": "#d3e4fe",
+                    "tertiary-fixed": "#e0e3e5",
+                    "on-tertiary-container": "#818486",
+                    "on-surface-variant": "#45464d",
+                    "on-secondary-fixed-variant": "#003ea8",
+                    "on-primary-fixed": "#131b2e",
+                    "surface-tint": "#565e74",
+                    "primary-container": "#131b2e",
+                    "on-secondary-container": "#fefcff",
+                    "surface-container-low": "#eff4ff",
+                    "error-container": "#ffdad6",
+                    "tertiary": "#000000",
+                    "inverse-surface": "#213145",
+                    "surface-container-highest": "#d3e4fe",
+                    "outline": "#76777d",
+                    "on-error-container": "#93000a",
+                    "secondary-container": "#316bf3",
+                    "on-secondary-fixed": "#00174b",
+                    "on-primary": "#ffffff",
+                    "secondary": "#0051d5",
+                    "on-error": "#ffffff",
+                    "on-background": "#0b1c30",
+                    "surface-container-high": "#dce9ff",
+                    "inverse-primary": "#bec6e0",
+                    "tertiary-fixed-dim": "#c4c7c9",
+                    "surface-bright": "#f8f9ff",
+                    "on-primary-container": "#7c839b",
+                    "on-secondary": "#ffffff",
+                    "surface-container": "#e5eeff",
+                    "on-tertiary-fixed-variant": "#444749",
+                    "on-tertiary-fixed": "#191c1e",
+                    "error": "#ba1a1a",
+                    "primary-fixed-dim": "#bec6e0",
+                    "surface-dim": "#cbdbf5",
+                    "secondary-fixed": "#dbe1ff",
+                    "primary-fixed": "#dae2fd",
+                    "tertiary-container": "#191c1e",
+                    "outline-variant": "#c6c6cd",
+                    "primary": "#000000",
+                    "on-tertiary": "#ffffff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "stack-md": "16px",
+                    "margin-page": "24px",
+                    "gutter": "16px",
+                    "stack-lg": "32px",
+                    "unit": "4px",
+                    "stack-sm": "8px",
+                    "touch-target-min": "48px"
+            },
+            "fontFamily": {
+                    "headline-md": ["Public Sans"],
+                    "headline-lg": ["Public Sans"],
+                    "body-md": ["Public Sans"],
+                    "button-text": ["Public Sans"],
+                    "body-lg": ["Public Sans"],
+                    "label-bold": ["Public Sans"]
+            },
+            "fontSize": {
+                    "headline-md": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "headline-lg": ["30px", {"lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "button-text": ["18px", {"lineHeight": "24px", "fontWeight": "600"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "label-bold": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .scanner-mask {
+            background-color: rgba(0, 0, 0, 0.6);
+            mask: radial-gradient(circle 160px at center, transparent 99%, black 100%);
+            -webkit-mask: radial-gradient(circle 160px at center, transparent 99%, black 100%);
+        }
+        .scanner-frame {
+            border: 2px solid white;
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body-md min-h-screen flex flex-col">
+<!-- Top AppBar (from Shared Components JSON) -->
+<header class="bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800 flex justify-between items-center w-full px-6 h-16 fixed top-0 z-50">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-slate-900 dark:text-slate-50" data-icon="account_circle">account_circle</span>
+<h1 class="font-['Public_Sans'] font-semibold text-lg text-slate-900 dark:text-slate-50">Scan QR</h1>
+</div>
+<div class="flex gap-4">
+<button class="p-2 transition-colors duration-200 hover:bg-slate-50 dark:hover:bg-slate-800 text-slate-900 dark:text-white">
+<span class="material-symbols-outlined" data-icon="more_vert">more_vert</span>
+</button>
+</div>
+</header>
+<!-- Main Content: Scanner Viewport -->
+<main class="flex-grow pt-16 pb-20 relative overflow-hidden flex flex-col">
+<!-- Viewfinder Area -->
+<div class="relative flex-grow bg-black overflow-hidden flex items-center justify-center">
+<!-- Simulated Camera Feed -->
+<img alt="Camera Viewport" class="absolute inset-0 w-full h-full object-cover opacity-80" data-alt="A blurred high-definition view from a smartphone camera looking at a clean white desk with a coffee mug and a printed paper containing a QR code. The lighting is bright and airy, following a modern professional office aesthetic with soft natural light streaming in. The image creates a realistic backdrop for a scanning interface, maintaining a sense of utility and clarity." src="https://lh3.googleusercontent.com/aida-public/AB6AXuChY_vpj4Bo6E8V8c9zVqgv2TZEavNGwMHECPSq25Y28oTGrot0DLaP9_HT6tsap1dCmLxd2_nX2xLKq8rr9guGA2oU7iF1P4uYFIdoZr_biQ1kHdNWkOJbolSbHjL0529q4_aGLSTUtkcgG8x5ECgGOrD-rfxf-kZI3UIWGjJdFzFXGfHpSMwjuxiFvCKkyEZaM7fEblvBXQVdMjkAB-MzEF-CgPyFXUDTykVzBB01XqISspPHrugyGw-0MlYPUvI7LlaIEkXg1G8"/>
+<!-- Overlay Mask -->
+<div class="absolute inset-0 bg-black/50 pointer-events-none">
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 border-2 border-white rounded-xl flex items-center justify-center">
+<!-- Corner Accents -->
+<div class="absolute -top-1 -left-1 w-8 h-8 border-t-4 border-l-4 border-secondary rounded-tl-lg"></div>
+<div class="absolute -top-1 -right-1 w-8 h-8 border-t-4 border-r-4 border-secondary rounded-tr-lg"></div>
+<div class="absolute -bottom-1 -left-1 w-8 h-8 border-b-4 border-l-4 border-secondary rounded-bl-lg"></div>
+<div class="absolute -bottom-1 -right-1 w-8 h-8 border-b-4 border-r-4 border-secondary rounded-br-lg"></div>
+</div>
+</div>
+<!-- Flashlight Toggle -->
+<div class="absolute bottom-12 left-1/2 -translate-x-1/2">
+<button class="w-14 h-14 bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center border border-white/30 text-white active:scale-95 transition-transform">
+<span class="material-symbols-outlined" data-icon="flashlight_on">flashlight_on</span>
+</button>
+</div>
+</div>
+<!-- Instructions Section (Accessible Professional Style) -->
+<div class="bg-surface-container-lowest px-margin-page py-stack-lg border-t border-outline-variant">
+<div class="max-w-md mx-auto text-center space-y-stack-sm">
+<h2 class="font-headline-md text-on-surface">Ready to Scan</h2>
+<p class="font-body-md text-on-surface-variant">Point your camera at a contact QR code to automatically save their information to your list.</p>
+<div class="pt-stack-md">
+<button class="w-full h-[56px] bg-secondary text-on-secondary font-button-text text-button-text rounded-xl shadow-sm active:bg-secondary-container transition-colors">
+                        Enter Code Manually
+                    </button>
+</div>
+</div>
+</div>
+</main>
+<!-- Bottom Navigation Bar (from Shared Components JSON) -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-safe bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800">
+<!-- Contacts -->
+<a class="flex flex-col items-center justify-center text-slate-500 dark:text-slate-400 px-4 py-1 hover:text-slate-900 dark:hover:text-slate-100 transition-transform h-14 md:h-16" href="#">
+<span class="material-symbols-outlined" data-icon="group">group</span>
+<span class="font-['Public_Sans'] text-xs font-medium">Contacts</span>
+</a>
+<!-- Scan QR (Active) -->
+<a class="flex flex-col items-center justify-center text-slate-900 dark:text-slate-50 bg-slate-100 dark:bg-slate-800 rounded-lg px-4 py-1 transition-transform h-14 md:h-16" href="#">
+<span class="material-symbols-outlined" data-icon="qr_code_scanner" style="font-variation-settings: 'FILL' 1;">qr_code_scanner</span>
+<span class="font-['Public_Sans'] text-xs font-medium">Scan QR</span>
+</a>
+<!-- Settings -->
+<a class="flex flex-col items-center justify-center text-slate-500 dark:text-slate-400 px-4 py-1 hover:text-slate-900 dark:hover:text-slate-100 transition-transform h-14 md:h-16" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="font-['Public_Sans'] text-xs font-medium">Settings</span>
+</a>
+</nav>
+</body></html>

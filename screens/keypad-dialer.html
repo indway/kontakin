@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700;800&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-secondary-container": "#fefcff",
+                    "on-primary": "#ffffff",
+                    "on-secondary-fixed-variant": "#003ea8",
+                    "surface-container": "#e5eeff",
+                    "secondary-fixed-dim": "#b4c5ff",
+                    "on-tertiary-fixed-variant": "#444749",
+                    "on-primary-fixed-variant": "#3f465c",
+                    "surface-container-highest": "#d3e4fe",
+                    "primary-container": "#131b2e",
+                    "on-tertiary-container": "#818486",
+                    "surface-variant": "#d3e4fe",
+                    "error-container": "#ffdad6",
+                    "tertiary-fixed-dim": "#c4c7c9",
+                    "on-surface": "#0b1c30",
+                    "on-background": "#0b1c30",
+                    "tertiary-container": "#191c1e",
+                    "error": "#ba1a1a",
+                    "surface-container-lowest": "#ffffff",
+                    "surface-bright": "#f8f9ff",
+                    "secondary-fixed": "#dbe1ff",
+                    "surface": "#f8f9ff",
+                    "outline-variant": "#c6c6cd",
+                    "secondary-container": "#316bf3",
+                    "primary-fixed": "#dae2fd",
+                    "surface-tint": "#565e74",
+                    "tertiary-fixed": "#e0e3e5",
+                    "secondary": "#0051d5",
+                    "tertiary": "#000000",
+                    "inverse-surface": "#213145",
+                    "inverse-primary": "#bec6e0",
+                    "surface-dim": "#cbdbf5",
+                    "surface-container-high": "#dce9ff",
+                    "on-tertiary-fixed": "#191c1e",
+                    "on-secondary-fixed": "#00174b",
+                    "surface-container-low": "#eff4ff",
+                    "primary-fixed-dim": "#bec6e0",
+                    "on-surface-variant": "#45464d",
+                    "background": "#f8f9ff",
+                    "on-primary-fixed": "#131b2e",
+                    "on-primary-container": "#7c839b",
+                    "primary": "#000000",
+                    "on-error": "#ffffff",
+                    "on-tertiary": "#ffffff",
+                    "inverse-on-surface": "#eaf1ff",
+                    "outline": "#76777d",
+                    "on-error-container": "#93000a",
+                    "on-secondary": "#ffffff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "touch-target-min": "48px",
+                    "stack-lg": "32px",
+                    "margin-page": "24px",
+                    "stack-sm": "8px",
+                    "stack-md": "16px",
+                    "gutter": "16px",
+                    "unit": "4px"
+            },
+            "fontFamily": {
+                    "button-text": ["Public Sans"],
+                    "body-lg": ["Public Sans"],
+                    "label-bold": ["Public Sans"],
+                    "headline-md": ["Public Sans"],
+                    "body-md": ["Public Sans"],
+                    "headline-lg": ["Public Sans"]
+            },
+            "fontSize": {
+                    "button-text": ["18px", {"lineHeight": "24px", "fontWeight": "600"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "label-bold": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "700"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "headline-lg": ["30px", {"lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .dial-number {
+            font-size: 42px;
+            letter-spacing: -0.02em;
+        }
+        .keypad-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+        }
+        .touch-ripple {
+            transition: background-color 0.1s ease;
+        }
+        .touch-ripple:active {
+            background-color: #e2e8f0;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body-md min-h-screen flex flex-col">
+<!-- Top App Bar -->
+<header class="flex items-center justify-between px-6 h-16 w-full bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800 sticky top-0 z-50">
+<div class="flex items-center">
+<span class="material-symbols-outlined text-slate-900 dark:text-slate-100">menu</span>
+</div>
+<h1 class="font-['Public_Sans'] font-semibold text-lg text-slate-900 dark:text-slate-100">Phone</h1>
+<div class="flex items-center">
+<span class="material-symbols-outlined text-slate-900 dark:text-slate-100">settings</span>
+</div>
+</header>
+<main class="flex-1 flex flex-col px-margin-page pb-24 max-w-md mx-auto w-full">
+<!-- Dialed Number Section -->
+<section class="flex flex-col items-center justify-center py-stack-lg min-h-[140px]">
+<div class="dial-number font-headline-lg text-on-surface select-all text-center tracking-tight px-4 break-all">
+                (555) 012-3456
+            </div>
+<!-- Contextual Action -->
+<button class="mt-stack-md flex items-center gap-2 px-6 py-3 bg-secondary-fixed text-on-secondary-fixed rounded-full hover:bg-secondary-fixed-dim transition-colors">
+<span class="material-symbols-outlined text-[20px]">person_add</span>
+<span class="font-label-bold text-label-bold">Create New Contact</span>
+</button>
+</section>
+<!-- Keypad Container -->
+<div class="mt-auto">
+<div class="keypad-grid mb-stack-lg">
+<!-- Key 1 -->
+<button class="flex flex-col items-center justify-center h-20 w-full rounded-2xl bg-white border border-outline-variant hover:bg-surface-container transition-all">
+<span class="text-headline-md font-headline-md">1</span>
+<span class="text-[10px] font-bold text-outline uppercase tracking-widest"> </span>
+</button>
+<!-- Key 2 -->
+<button class="flex flex-col items-center justify-center h-20 w-full rounded-2xl bg-white border border-outline-variant hover:bg-surface-container transition-all">
+<span class="text-headline-md font-headline-md">2</span>
+<span class="text-[10px] font-bold text-outline uppercase tracking-widest">ABC</span>
+</button>
+<!-- Key 3 -->
+<button class="flex flex-col items-center justify-center h-20 w-full rounded-2xl bg-white border border-outline-variant hover:bg-surface-container transition-all">
+<span class="text-headline-md font-headline-md">3</span>
+<span class="text-[10px] font-bold text-outline uppercase tracking-widest">DEF</span>
+</button>
+<!-- Key 4 -->
+<button class="flex flex-col items-center justify-center h-20 w-full rounded-2xl bg-white border border-outline-variant hover:bg-surface-container transition-all">
+<span class="text-headline-md font-headline-md">4</span>
+<span class="text-[10px] font-bold text-outline uppercase tracking-widest">GHI</span>
+</button>
+<!-- Key 5 -->
+<button class="flex flex-col items-center justify-center h-20 w-full rounded-2xl bg-white border border-outline-variant hover:bg-surface-container transition-all">
+<span class="text-headline-md font-headline-md">5</span>
+<span class="text-[10px] font-bold text-outline uppercase tracking-widest">JKL</span>
+</button>
+<!-- Key 6 -->
+<button class="flex flex-col items-center justify-center h-20 w-full rounded-2xl bg-white border border-outline-variant hover:bg-surface-container transition-all">
+<span class="text-headline-md font-headline-md">6</span>
+<span class="text-[10px] font-bold text-outline uppercase tracking-widest">MNO</span>
+</button>
+<!-- Key 7 -->
+<button class="flex flex-col items-center justify-center h-20 w-full rounded-2xl bg-white border border-outline-variant hover:bg-surface-container transition-all">
+<span class="text-headline-md font-headline-md">7</span>
+<span class="text-[10px] font-bold text-outline uppercase tracking-widest">PQRS</span>
+</button>
+<!-- Key 8 -->
+<button class="flex flex-col items-center justify-center h-20 w-full rounded-2xl bg-white border border-outline-variant hover:bg-surface-container transition-all">
+<span class="text-headline-md font-headline-md">8</span>
+<span class="text-[10px] font-bold text-outline uppercase tracking-widest">TUV</span>
+</button>
+<!-- Key 9 -->
+<button class="flex flex-col items-center justify-center h-20 w-full rounded-2xl bg-white border border-outline-variant hover:bg-surface-container transition-all">
+<span class="text-headline-md font-headline-md">9</span>
+<span class="text-[10px] font-bold text-outline uppercase tracking-widest">WXYZ</span>
+</button>
+<!-- Key * -->
+<button class="flex flex-col items-center justify-center h-20 w-full rounded-2xl bg-white border border-outline-variant hover:bg-surface-container transition-all">
+<span class="text-headline-md font-headline-md">*</span>
+</button>
+<!-- Key 0 -->
+<button class="flex flex-col items-center justify-center h-20 w-full rounded-2xl bg-white border border-outline-variant hover:bg-surface-container transition-all">
+<span class="text-headline-md font-headline-md">0</span>
+<span class="text-[10px] font-bold text-outline uppercase tracking-widest">+</span>
+</button>
+<!-- Key # -->
+<button class="flex flex-col items-center justify-center h-20 w-full rounded-2xl bg-white border border-outline-variant hover:bg-surface-container transition-all">
+<span class="text-headline-md font-headline-md">#</span>
+</button>
+</div>
+<!-- Call and Backspace Row -->
+<div class="grid grid-cols-3 gap-gutter items-center">
+<div class="col-start-2 flex justify-center">
+<button class="h-[72px] w-[72px] rounded-full bg-[#34A853] text-white flex items-center justify-center shadow-lg active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-[32px]" style="font-variation-settings: 'FILL' 1;">call</span>
+</button>
+</div>
+<div class="col-start-3 flex justify-center">
+<button class="flex items-center justify-center h-touch-target-min w-touch-target-min text-outline active:text-on-surface transition-colors">
+<span class="material-symbols-outlined text-[28px]">backspace</span>
+</button>
+</div>
+</div>
+</div>
+</main>
+<!-- Bottom Navigation Bar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 h-20 pb-safe bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800">
+<!-- Favorites -->
+<a class="flex flex-col items-center justify-center text-slate-500 dark:text-slate-400 px-5 py-1 hover:text-blue-600 dark:hover:text-blue-400 transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="star">star</span>
+<span class="font-['Public_Sans'] text-xs font-medium mt-1">Favorites</span>
+</a>
+<!-- Recents -->
+<a class="flex flex-col items-center justify-center text-slate-500 dark:text-slate-400 px-5 py-1 hover:text-blue-600 dark:hover:text-blue-400 transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="history">history</span>
+<span class="font-['Public_Sans'] text-xs font-medium mt-1">Recents</span>
+</a>
+<!-- Contacts -->
+<a class="flex flex-col items-center justify-center text-slate-500 dark:text-slate-400 px-5 py-1 hover:text-blue-600 dark:hover:text-blue-400 transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="font-['Public_Sans'] text-xs font-medium mt-1">Contacts</span>
+</a>
+<!-- Keypad (Active) -->
+<a class="flex flex-col items-center justify-center bg-blue-50 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 rounded-2xl px-5 py-1 scale-95 transition-transform duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="dialpad" style="font-variation-settings: 'FILL' 1;">dialpad</span>
+<span class="font-['Public_Sans'] text-xs font-medium mt-1">Keypad</span>
+</a>
+</nav>
+</body></html>
