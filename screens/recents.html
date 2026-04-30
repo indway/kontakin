@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary-fixed": "#e0e3e5",
+                        "surface-bright": "#f8f9ff",
+                        "outline": "#76777d",
+                        "on-error": "#ffffff",
+                        "secondary-fixed-dim": "#b4c5ff",
+                        "secondary-fixed": "#dbe1ff",
+                        "on-primary-fixed": "#131b2e",
+                        "on-error-container": "#93000a",
+                        "tertiary": "#000000",
+                        "on-tertiary-fixed": "#191c1e",
+                        "on-surface": "#0b1c30",
+                        "surface-tint": "#565e74",
+                        "on-secondary-fixed-variant": "#003ea8",
+                        "on-primary-container": "#7c839b",
+                        "error-container": "#ffdad6",
+                        "primary-fixed-dim": "#bec6e0",
+                        "secondary": "#0051d5",
+                        "on-surface-variant": "#45464d",
+                        "on-tertiary": "#ffffff",
+                        "surface-container-lowest": "#ffffff",
+                        "on-secondary-container": "#fefcff",
+                        "on-tertiary-fixed-variant": "#444749",
+                        "surface-dim": "#cbdbf5",
+                        "primary": "#000000",
+                        "on-secondary-fixed": "#00174b",
+                        "secondary-container": "#316bf3",
+                        "primary-container": "#131b2e",
+                        "outline-variant": "#c6c6cd",
+                        "surface-container-low": "#eff4ff",
+                        "primary-fixed": "#dae2fd",
+                        "background": "#f8f9ff",
+                        "surface-container-highest": "#d3e4fe",
+                        "on-tertiary-container": "#818486",
+                        "surface-container-high": "#dce9ff",
+                        "inverse-surface": "#213145",
+                        "tertiary-fixed-dim": "#c4c7c9",
+                        "on-primary": "#ffffff",
+                        "error": "#ba1a1a",
+                        "inverse-primary": "#bec6e0",
+                        "surface-variant": "#d3e4fe",
+                        "on-secondary": "#ffffff",
+                        "tertiary-container": "#191c1e",
+                        "surface": "#f8f9ff",
+                        "inverse-on-surface": "#eaf1ff",
+                        "on-background": "#0b1c30",
+                        "on-primary-fixed-variant": "#3f465c",
+                        "surface-container": "#e5eeff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "unit": "4px",
+                        "stack-sm": "8px",
+                        "stack-md": "16px",
+                        "stack-lg": "32px",
+                        "margin-page": "24px",
+                        "gutter": "16px",
+                        "touch-target-min": "48px"
+                    },
+                    "fontFamily": {
+                        "body-lg": ["Public Sans"],
+                        "button-text": ["Public Sans"],
+                        "label-bold": ["Public Sans"],
+                        "headline-md": ["Public Sans"],
+                        "headline-lg": ["Public Sans"],
+                        "body-md": ["Public Sans"]
+                    },
+                    "fontSize": {
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "button-text": ["18px", {"lineHeight": "24px", "fontWeight": "600"}],
+                        "label-bold": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "700"}],
+                        "headline-md": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                        "headline-lg": ["30px", {"lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Public Sans', sans-serif; }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background min-h-screen pb-24">
+<!-- TopAppBar -->
+<header class="bg-slate-50 flex justify-between items-center w-full px-6 h-16 docked full-width top-0 border-b border-slate-200 sticky z-50">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full overflow-hidden border border-outline-variant">
+<img alt="User" class="w-full h-full object-cover" data-alt="A professional headshot of a mature administrative professional with a friendly expression. The background is a blurred office environment with soft natural lighting. The overall color palette is composed of cool blues and clean whites, reflecting a corporate and reliable aesthetic. High-definition photography with a focus on clarity and professionalism." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA_mhwdPqMMcXG1C0GxnUfh-0N0tLWAO5IBIs0K7HWf_wGLyJ5CWTpJfk6-zm2UkowLv2-cxyJCd6IUvUDK9hkXicGH46bkzn4uN43s1CHDdINNrq9rSJhRTx2jr1xSp5eUKvq46zBY3LkZ876eIILx8NQ10RMlPIyhfpD0O_0p-XdgAUBrxKdVl8PP0cnAuBLjTCphDJcH_NryOjSkLKCAhr1X-na1DzdjI6VOtUPIhXxEZdZDH4UyH00XPCQnsa3sqWg2GCFwxug"/>
+</div>
+<h1 class="font-public-sans font-bold text-lg text-slate-900">Contacts</h1>
+</div>
+<button class="w-12 h-12 flex items-center justify-center rounded-full hover:bg-slate-100 active:opacity-70 transition-opacity">
+<span class="material-symbols-outlined text-slate-900" data-icon="search">search</span>
+</button>
+</header>
+<main class="mt-6 px-margin-page space-y-stack-lg">
+<!-- Favorites Section -->
+<section>
+<div class="flex justify-between items-center mb-stack-md">
+<h2 class="font-headline-md text-headline-md text-on-surface">Favorites</h2>
+<button class="text-secondary font-label-bold text-label-bold px-2 py-1">View All</button>
+</div>
+<div class="flex overflow-x-auto gap-gutter no-scrollbar py-2">
+<!-- Principal -->
+<div class="flex-shrink-0 flex flex-col items-center w-24 gap-stack-sm">
+<div class="w-20 h-20 rounded-full p-1 border-2 border-secondary-container">
+<img class="w-full h-full rounded-full object-cover" data-alt="Close-up portrait of a professional school principal in a navy blue suit, smiling confidently. The lighting is bright and crisp, highlighting a clean-cut corporate appearance. The background consists of a minimalist, light-filled modern office space with subtle architectural details. The aesthetic is extremely clean, professional, and trustworthy, using a palette of white and deep blue." src="https://lh3.googleusercontent.com/aida-public/AB6AXuADGXe8KPl0V-0ctzFoyKtpp0UR14XeOY5tE3g_CAlOpezwyI1OymKiIKNWD4NCmdOlZitanjYiDATLBevGoP9iMqhegBG_NMSxXnFewpNCs5luBh2SNsxZ7yy3YHGvocfRCVG5Wwu1Lbm2Wph42LZhBUetv-bFeCols4Vb1acKeHRruQoN7Vuxf-oGXmQmsAgMM5JfEZv1Ct8LGHpfqTLoLQmaZvIr70jl2e_8BftugdYgzVDTFWkn0pqDC5lLBo08dOGRr6hKE8Q"/>
+</div>
+<span class="font-label-bold text-label-bold text-on-surface text-center leading-tight">Dr. Aris</span>
+<span class="text-[10px] uppercase tracking-wider text-on-surface-variant font-bold">Principal</span>
+</div>
+<!-- Vice Principal -->
+<div class="flex-shrink-0 flex flex-col items-center w-24 gap-stack-sm">
+<div class="w-20 h-20 rounded-full p-1 border-2 border-outline-variant">
+<img class="w-full h-full rounded-full object-cover" data-alt="A high-quality portrait of a focused female educator in a modern academic setting. She is wearing a professional charcoal blazer over a white blouse. The lighting is soft and even, creating an inviting yet authoritative mood. The background is a light-filled corridor of a contemporary school building with glass and metal accents. The visual style is polished and high-utility." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAMT3BzQ2cakPzgMSV_I5i6TZYOJZZDL0c7PvwGbhUwXdf552JLwrWXL-vTI-wEnBD5ugYduzINCSCgeARQr9uf8gKZxiN7x_NnctVqg_vt0foaQcdCnSOPtx9E2fJunAzTibsgMBrlgfPWPDscI8CeAFIZrxQgSg8P0-5ZR8kqOqwLNa68Il0oFjMdw5yDx4at2ctum95zq9wwlj-qb3jkWIFZTW1Rd69UDVzwjmmZeJ2HlJGw0jYhF4NVmpAy6ur5NPV9AD-7WlI"/>
+</div>
+<span class="font-label-bold text-label-bold text-on-surface text-center leading-tight">Mrs. Chen</span>
+<span class="text-[10px] uppercase tracking-wider text-on-surface-variant font-bold">Vice Prin.</span>
+</div>
+<!-- Head of Admin -->
+<div class="flex-shrink-0 flex flex-col items-center w-24 gap-stack-sm">
+<div class="w-20 h-20 rounded-full p-1 border-2 border-outline-variant">
+<img class="w-full h-full rounded-full object-cover" data-alt="A portrait of a male school administrator in his late 40s with a kind and reliable expression. He is wearing a light blue dress shirt, situated in a brightly lit school office. The scene is clean and organized, emphasizing competence and accessibility. The color scheme is dominated by soft whites and professional blues, following the accessible professional design ethos." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB3IZ0pLA9KCmJPOx1TGgZgYllGMesl1VUNYSEjpDWm94o5s0sdEAyQaew2akK7fObFKn7D8jPAA2rO8w7TSzl-6M9H14io4V-TIfwxPTeIm9EVP4vUMWgI8aPoHYawwbh_RLWPh6_9eN0-TKkMF9l4_3rz97c9AubaQxK5jaNv3esUckLPcnlYtWuqW10KHtzGEMOlxeDYN_MDsoVEC1X-Ol-hdqwpis6uaywFxRxVtGY4dgjSeGCKwP5AW94ZZ3LNyautmzl60ck"/>
+</div>
+<span class="font-label-bold text-label-bold text-on-surface text-center leading-tight">Mr. Davies</span>
+<span class="text-[10px] uppercase tracking-wider text-on-surface-variant font-bold">Admin</span>
+</div>
+<!-- Board Member -->
+<div class="flex-shrink-0 flex flex-col items-center w-24 gap-stack-sm">
+<div class="w-20 h-20 rounded-full p-1 border-2 border-outline-variant">
+<img class="w-full h-full rounded-full object-cover" data-alt="A professional studio portrait of a woman in a business casual outfit, representing a school board member. The lighting is high-key and professional, with a clean white backdrop that makes the subject stand out. The image conveys leadership and inclusivity through a warm, genuine smile. The overall look is modern and polished, using a high-contrast corporate palette." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDA04lNtojkuPBqI7Whj-ATew_NDAomOSSIJUc-Y4gs6WvV2EZyXa8Evh_a-CtYGXYcbuC_B1CU1fhANBM4niVIMguFL2nF0mJ2OF-0jdS5UxiriSoLrdhoO_hFi-nIGDuk_nAI_Et5OlDWa9ahq2hgVwAospj5Lc_hLWViuuz-_ZZi4TA3I-9nGMeqqUicJ1SEh45Cf5uq8L9TdVqvMIhgk_fWlSePVEOsggVbdXO8WP0q0Mle9K5ua4PT4we3gGx0J15Bcur3A70"/>
+</div>
+<span class="font-label-bold text-label-bold text-on-surface text-center leading-tight">Sarah J.</span>
+<span class="text-[10px] uppercase tracking-wider text-on-surface-variant font-bold">Board</span>
+</div>
+</div>
+</section>
+<!-- Recents Section -->
+<section class="space-y-stack-md">
+<h2 class="font-headline-md text-headline-md text-on-surface">Recents</h2>
+<div class="space-y-unit">
+<!-- Recent Item 1 -->
+<div class="flex items-center justify-between p-4 bg-surface-container-lowest border border-outline-variant rounded-xl active:scale-[0.98] transition-transform">
+<div class="flex items-center gap-stack-md">
+<div class="relative">
+<div class="w-12 h-12 rounded-full overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Close-up of a middle-aged male administrator's face, showing a friendly and professional demeanor. The image is brightly lit with a clear focus on the eyes, creating a sense of connection. The background is a soft-focus office interior. The colors are muted and professional, aligning with a reliable corporate brand identity." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCiJFQ-eK_0plhHkw6yQzz3zuSsIvI5_fAHMCMJ7-lbQMP8GEDulntTkeF6I5ssamNhKtciuVBY-_XM-eqkHxhkNPIiMIDrKxL5EgqEHwWRq5mChHXpuctTlZI15sUNNI8I4h6LC3kh2MBRkxRINbHPQkpwEf9u9jAPPLcWChEZdX-iehmwvoAdOt948H8KQil1zQqlhgohlSpmQow9fVVLLO6nTMhljDBLnsqCLhxGcii1nw7mR-rUHmAfr7ePgbSKqza6c3VAL7s"/>
+</div>
+<div class="absolute -bottom-1 -right-1 bg-white rounded-full p-0.5">
+<span class="material-symbols-outlined text-green-600 text-sm leading-none" data-icon="call">call</span>
+</div>
+</div>
+<div>
+<p class="font-body-lg text-body-lg text-on-surface font-semibold">Robert Wilson</p>
+<p class="text-on-surface-variant font-body-md text-sm">Head of Administration</p>
+<p class="text-outline text-xs mt-0.5">2 mins ago</p>
+</div>
+</div>
+<button class="w-12 h-12 rounded-full bg-blue-50 text-secondary flex items-center justify-center hover:bg-blue-100 transition-colors">
+<span class="material-symbols-outlined" data-icon="chat">chat</span>
+</button>
+</div>
+<!-- Recent Item 2 -->
+<div class="flex items-center justify-between p-4 bg-surface-container-lowest border border-outline-variant rounded-xl active:scale-[0.98] transition-transform">
+<div class="flex items-center gap-stack-md">
+<div class="relative">
+<div class="w-12 h-12 rounded-full overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A portrait of a female educational consultant with a professional and approachable look. She has a subtle smile and is positioned against a clean, light-colored wall. The lighting is natural and bright, conveying a sense of transparency and reliability. The aesthetic is modern and corporate, emphasizing high-quality data-driven management." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBBr-eL3yiFTOGsgbQb0HdKYCgqkLglCGLo5sl-Zd2Jpco-CePs4Z5N1OEo6DIY_oIhID6DN7clTHH6_QpJYSiXk-gMhwK7OxtsuyDRKwX-QEcUya11BDRfsF54YiQrjw41N4RXv00-zEqEJy9mdjt49HqzYjIhMHZ0xOztaY_E12_lBcHDcNq4u-xQgbJDliTNggx2fFBCYhSL_vBGgXActxyiYTZB4rB51asTrTdT2IF9f6EYsx3PRyJLk1_DCoE-U0U6yXfakiI"/>
+</div>
+<div class="absolute -bottom-1 -right-1 bg-white rounded-full p-0.5">
+<span class="material-symbols-outlined text-blue-600 text-sm leading-none" data-icon="chat">chat</span>
+</div>
+</div>
+<div>
+<p class="font-body-lg text-body-lg text-on-surface font-semibold">Elena Rodriguez</p>
+<p class="text-on-surface-variant font-body-md text-sm">Academic Coordinator</p>
+<p class="text-outline text-xs mt-0.5">Today, 10:45 AM</p>
+</div>
+</div>
+<button class="w-12 h-12 rounded-full bg-blue-50 text-secondary flex items-center justify-center hover:bg-blue-100 transition-colors">
+<span class="material-symbols-outlined" data-icon="chat">chat</span>
+</button>
+</div>
+<!-- Recent Item 3 -->
+<div class="flex items-center justify-between p-4 bg-surface-container-lowest border border-outline-variant rounded-xl active:scale-[0.98] transition-transform">
+<div class="flex items-center gap-stack-md">
+<div class="relative">
+<div class="w-12 h-12 rounded-full bg-surface-container flex items-center justify-center text-on-surface-variant">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+</div>
+<div class="absolute -bottom-1 -right-1 bg-white rounded-full p-0.5">
+<span class="material-symbols-outlined text-green-600 text-sm leading-none" data-icon="call">call</span>
+</div>
+</div>
+<div>
+<p class="font-body-lg text-body-lg text-on-surface font-semibold">+44 20 7946 0123</p>
+<p class="text-on-surface-variant font-body-md text-sm">External Partner</p>
+<p class="text-outline text-xs mt-0.5">Yesterday</p>
+</div>
+</div>
+<button class="w-12 h-12 rounded-full bg-blue-50 text-secondary flex items-center justify-center hover:bg-blue-100 transition-colors">
+<span class="material-symbols-outlined" data-icon="chat">chat</span>
+</button>
+</div>
+<!-- Recent Item 4 -->
+<div class="flex items-center justify-between p-4 bg-surface-container-lowest border border-outline-variant rounded-xl active:scale-[0.98] transition-transform opacity-80">
+<div class="flex items-center gap-stack-md">
+<div class="relative">
+<div class="w-12 h-12 rounded-full overflow-hidden grayscale">
+<img class="w-full h-full object-cover" data-alt="A crisp, black and white portrait of a male professional. He is dressed in a formal button-down shirt. The lighting creates a high-contrast look, suitable for a sophisticated and established brand image. The background is a plain, dark grey, allowing the subject to be the central focus. The style is timeless, clean, and professional." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCK1beOvb1KToeVQDye_w065ZMq1xLtJ58PK3AOcsr0Yf6pSfY87Xmp09hUEc-Y1r-HsfjMvBkF1VvSoNk-FhHy9l2pzM8mFsOtS6dMFt6nxYXGDJbMQDvgzXZ3ZlsyCKFj7F_j-59PCZkjZqQt4i7_h_Rzt9Um0JbFCbMVeH-_SaWKV6kDNND2X2hhcq_sd_9h9PxCaWwiseCSP2kEwmw0g2u-OhjKHgAkRa17Mp1AeHElMYSyjXAmQBIf_gbIPCNfMDwi3tz-WHo"/>
+</div>
+<div class="absolute -bottom-1 -right-1 bg-white rounded-full p-0.5">
+<span class="material-symbols-outlined text-red-600 text-sm leading-none" data-icon="call_missed">call_missed</span>
+</div>
+</div>
+<div>
+<p class="font-body-lg text-body-lg text-on-surface font-semibold">James Thompson</p>
+<p class="text-on-surface-variant font-body-md text-sm">Security Lead</p>
+<p class="text-outline text-xs mt-0.5">Oct 24, 4:15 PM</p>
+</div>
+</div>
+<button class="w-12 h-12 rounded-full bg-blue-50 text-secondary flex items-center justify-center hover:bg-blue-100 transition-colors">
+<span class="material-symbols-outlined" data-icon="chat">chat</span>
+</button>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 h-20 pb-safe bg-white border-t border-slate-200">
+<button class="flex flex-col items-center justify-center text-blue-700 bg-blue-50 rounded-lg px-4 py-1 active:scale-95 transition-transform">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="font-public-sans text-xs font-medium">Home</span>
+</button>
+<button class="flex flex-col items-center justify-center text-slate-500 px-4 py-1 active:scale-95 transition-transform hover:text-blue-600">
+<span class="material-symbols-outlined" data-icon="file_upload">file_upload</span>
+<span class="font-public-sans text-xs font-medium">Import</span>
+</button>
+<button class="flex flex-col items-center justify-center text-slate-500 px-4 py-1 active:scale-95 transition-transform hover:text-blue-600">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="font-public-sans text-xs font-medium">Settings</span>
+</button>
+</nav>
+</body></html>
